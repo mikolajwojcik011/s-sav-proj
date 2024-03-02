@@ -3,7 +3,7 @@ const router = express.Router()
 const videos = require('../mockData')
 const fs = require('fs')
 
-// get list of video
+// get list of videos
 router.get('/', (req,res)=>{
     res.json(videos)
 })

@@ -1,30 +1,38 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+  export default {
+    name: "App",
+    components: {},
+    data() {
+      return {
+        videos: ['huj']
+      }
+    },
+    methods: {
+      test() {
+        console.log(this.videos)
+      },
+      async fetchVideos() {
+        await fetch('http://localhost:5000/videos')
+        .then(res => res.json())
+        .then(data => this.videos = data)
+        .catch(err => console.log(err))
+      }
+    },
+    mounted() {
+      this.fetchVideos()
+    },
+    
+
+}
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <button @click.prevent="test">test</button>
+  <div v-for="video in videos"></div>
+  <video controls muted autoPlay crossOrigin="anonymous">
+    <source :src="`http://localhost:5000/videos/video/tom-and-jerry`" type="video/mp4">
+  </video>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>
