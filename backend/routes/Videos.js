@@ -9,14 +9,14 @@ router.get('/', (req,res)=>{
 })
 
 // make request for a particular video
-router.get('/:id/data', (req,res)=> {
+router.get('/:name/data', (req,res)=> {
     const id = parseInt(req.params.id, 10)
     res.json(videos[id])
 })
 
 //streaming route
-router.get('/video/:id', (req, res) => {
-    const videoPath = `assets/${req.params.id}.mp4`;
+router.get('/video/:name', (req, res) => {
+    const videoPath = `assets/${req.params.name}.mp4`;
     const videoStat = fs.statSync(videoPath);
     const fileSize = videoStat.size;
     const videoRange = req.headers.range;

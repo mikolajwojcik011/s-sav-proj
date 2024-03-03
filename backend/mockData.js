@@ -2,12 +2,14 @@ const allVideos = [
     {
         id: "0",
         poster: '',
+        duration: '3 mins',
         name: 'XDDDul'
     },
     {
         id: "1",
         poster: '',
-        name: 'polowanie na kibel'
+        duration: '3 mins',
+        name: 'polowanienakibel'
     },
 ];
 
