@@ -2,13 +2,28 @@
 
 export default {
     name: "VideoView",
-    props: ['id']
-}
+    props: ['uid'],
+    data() {
+        return {
+            videoSrc: null,
+        }
+    },
+    methods: {
+        changeResolution(res) {
+            let currentTime = this.$refs.VideoPlayer.currentTime
+            this.$refs.VideoPlayer.src = `http://localhost:5000/videos/video/` + this.uid + '-' + res
+            this.$refs.VideoPlayer.play()
+            this.$refs.VideoPlayer.currentTime = currentTime
+        }
+    }
+    }
 
 </script>
 
 <template> 
-    <video controls muted autoPlay crossOrigin="anonymous">
-        <source :src="`http://localhost:5000/videos/video/`+ this.id" type="video/mp4">
+    <video width="1280" height="720" ref="VideoPlayer" controls muted autoPlay crossOrigin="anonymous">
+        <source :src="videoSrc" type="video/mp4">
     </video>
+    <button @click="changeResolution('720')">720</button>
+    <button @click="changeResolution('240')">240</button>
 </template>

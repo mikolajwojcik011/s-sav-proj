@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const videos = require('../mockData')
+const videos = require('../viedoList.js')
 const fs = require('fs')
 
 // get list of videos
@@ -8,15 +8,10 @@ router.get('/', (req,res)=>{
     res.json(videos)
 })
 
-// make request for a particular video
-router.get('/:name/data', (req,res)=> {
-    const id = parseInt(req.params.id, 10)
-    res.json(videos[id])
-})
-
 //streaming route
-router.get('/video/:name', (req, res) => {
-    const videoPath = `assets/${req.params.name}.mp4`;
+router.get('/video/:uid', (req, res) => {
+    console.log(req.params.uid)
+    const videoPath = `assets/${req.params.uid}.mp4`;
     const videoStat = fs.statSync(videoPath);
     const fileSize = videoStat.size;
     const videoRange = req.headers.range;

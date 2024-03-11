@@ -4,7 +4,7 @@
     components: {},
     data() {
       return {
-        videoList: ['huj']
+        videoList: null,
       }
     },
     methods: {
@@ -27,7 +27,7 @@
 </script>
 
 <template>
-  <router-link :to="/video/+ video.name" v-for="video in videoList" :key="video.id">{{ video.name }}</router-link>
+  <router-link v-for="video in videoList" :to="/video/+ video.uid" :key="video.uid">{{ video.title }}</router-link>
 </template>
 
 <style scoped>
