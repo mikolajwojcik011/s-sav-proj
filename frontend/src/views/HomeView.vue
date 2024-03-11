@@ -1,7 +1,11 @@
 <script>
-  export default {
+
+import Tile from '../components/Tile.vue';
+
+  
+export default {
     name: "HomeView",
-    components: {},
+    components: {Tile},
     data() {
       return {
         videoList: ['huj']
@@ -27,8 +31,31 @@
 </script>
 
 <template>
-  <router-link :to="/video/+ video.name" v-for="video in videoList" :key="video.id">{{ video.name }}</router-link>
+  <section class="wrapper">
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+    <Tile ></Tile>
+  </section>
 </template>
 
 <style scoped>
+  .wrapper {
+    display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        padding: 20px;
+  }
+
 </style>
