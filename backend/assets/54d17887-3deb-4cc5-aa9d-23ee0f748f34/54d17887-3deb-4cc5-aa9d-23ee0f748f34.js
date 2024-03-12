@@ -1,6 +1,8 @@
 const avilableResolutions = [
-    '1080',
+    '180',
     '720',
+    '480',
+    '360',
 ]
 
 module.exports = avilableResolutions

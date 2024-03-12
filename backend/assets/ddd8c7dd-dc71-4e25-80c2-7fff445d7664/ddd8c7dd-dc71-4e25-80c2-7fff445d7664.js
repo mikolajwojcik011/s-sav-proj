@@ -1,5 +1,5 @@
 const avilableResolutions = [
-    '1080',
+    '180',
     '720',
 ]
 
