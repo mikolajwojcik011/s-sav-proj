@@ -3,7 +3,7 @@ const allVideos = [
         uid: "a6364ccb-b3bc-436e-bfca-70b2db455f0b",
         thumbnail: 'https://i.postimg.cc/7YLYjRTP/a6364ccb-b3bc-436e-bfca-70b2db455f0b.jpg',
         duration: '3 mins',
-        title: 'XDDDul',
+        title: 'XDDDul', 
     },
     {
         uid: "126a7d50-7c2d-45b6-ba9e-48f548156980",

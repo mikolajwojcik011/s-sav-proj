@@ -17,7 +17,6 @@
         .then(res => res.json())
         .then(data => this.videoList = data)
         .catch(err => console.log(err))
-        console.log(this.videoList)
       },
     },
     mounted() {

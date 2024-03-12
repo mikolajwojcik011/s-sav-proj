@@ -5,8 +5,8 @@ export default {
     props: ['uid'],
     data() {
         return {
+            resTable: [],
             videoSrc: null,
-            resTable: null
         }
     },
     methods: {
@@ -19,9 +19,11 @@ export default {
         async fetchResTable() {
             await fetch(`http://localhost:5000/videos/resoltuionTable/` + this.uid)
             .then(res => res.json())
-            .then(data => this.resTable = data)
+            .then(data => {
+                for(const [key, value] of Object.entries(data)) this.resTable.push(value)
+            })
             .catch(err => console.log(err))
-            console.log(this.resTable)
+            console.log(this.resTable[0])
         },
     },
     mounted() {
@@ -32,9 +34,8 @@ export default {
 </script>
 
 <template> 
-    <video width="1280" height="720" ref="VideoPlayer" controls muted autoPlay crossOrigin="anonymous">
-        <source :src="videoSrc" type="video/mp4">
+    <video v-if="resTable.length != 0" width="1280" height="720" ref="VideoPlayer" controls muted autoPlay crossOrigin="anonymous">
+        <source :src="`http://localhost:5000/videos/video/`+ this.uid + '-' + this.resTable[0]" type="video/mp4">
     </video>
-    <button @click="changeResolution('720')">720</button>
-    <button @click="changeResolution('240')">240</button>
+    <button v-for="resolution in resTable" @click="changeResolution(resolution)">{{resolution}}</button>
 </template>
