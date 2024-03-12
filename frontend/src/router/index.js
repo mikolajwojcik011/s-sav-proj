@@ -10,7 +10,7 @@ const routes = [
     },
     {
         name: "video",
-        path: "/video/:uid",
+        path: "/video/:uid/",
         component: VideoView,
         props: true
     }
