@@ -1,11 +1,15 @@
 <template>
-    <div class="tile"> <img src="https://1.bp.blogspot.com/-R-ab3bJBv6o/YRoctUuVKiI/AAAAAAAAG8A/eNHL8NAhJ6gRZBp3eW-KMzGOdrUsaFVrQCLcBGAsYHQ/s16000/youtubethumbnaildownloader.png" alt="Thumbnail"><h3 class="roboto-bold">Normalny tekst pzdr jak yt blyblybly</h3></div>
+    <div class="tile"> 
+        <img :src=thumbnail alt="Thumbnail">
+        <h3 class="roboto-bold">{{ title }}</h3>
+    </div>
 
 </template>
 
 <script>
  export default {
     name: "Tile",
+    props: ['title', 'thumbnail'],
     components: {},
 }
 </script>
