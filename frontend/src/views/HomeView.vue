@@ -53,9 +53,9 @@ export default {
 <style scoped>
   .wrapper {
     display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        padding: 20px;
+        grid-template-columns: repeat(5, 1fr);  
+        padding: 1rem;  
+          
   }
 
 </style>

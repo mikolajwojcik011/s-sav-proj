@@ -1,5 +1,5 @@
 <template>
-    <div class="tile"> <img src="https://1.bp.blogspot.com/-R-ab3bJBv6o/YRoctUuVKiI/AAAAAAAAG8A/eNHL8NAhJ6gRZBp3eW-KMzGOdrUsaFVrQCLcBGAsYHQ/s16000/youtubethumbnaildownloader.png" alt="Thumbnail"><h3>Title 1</h3></div>
+    <div class="tile"> <img src="https://1.bp.blogspot.com/-R-ab3bJBv6o/YRoctUuVKiI/AAAAAAAAG8A/eNHL8NAhJ6gRZBp3eW-KMzGOdrUsaFVrQCLcBGAsYHQ/s16000/youtubethumbnaildownloader.png" alt="Thumbnail"><h3 class="roboto-bold">Normalny tekst pzdr jak yt blyblybly</h3></div>
 
 </template>
 
@@ -12,23 +12,29 @@
 
 <style>
   .tile {
-        background-color: #d82d2d;
-        border: 1px solid #000000;
-        border-radius: 10px;
         box-sizing: border-box;
-        padding: 5px;
-        max-width: 400px;
+        max-width: 344px;
+        margin-bottom: 2.5rem;
     }
 
     .tile img {
         max-width: 344px;
         height: auto;
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
     }
 
     .tile h3 {
-        font-size: 16px;
+        font-size: 1.2rem;
         margin: 0;
+        margin-left: 1rem;
+
+    }
+    
+    .roboto-bold {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-style: normal;
     }
 </style>
