@@ -8,15 +8,13 @@
       }
     },
     methods: {
-      test() {
-        console.log(this.videos)
-      },
       async fetchVideos() {
         await fetch('http://localhost:5000/videos')
         .then(res => res.json())
         .then(data => this.videoList = data)
         .catch(err => console.log(err))
-      }
+        console.log(this.videoList)
+      },
     },
     mounted() {
       this.fetchVideos()
@@ -27,7 +25,7 @@
 </script>
 
 <template>
-  <router-link v-for="video in videoList" :to="/video/+ video.uid" :key="video.uid">{{ video.title }}</router-link>
+  <router-link v-for="{title, uid} in videoList" :to="/video/+ uid" :key="uid">{{ title }}</router-link>
 </template>
 
 <style scoped>

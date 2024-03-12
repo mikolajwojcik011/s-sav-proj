@@ -6,6 +6,7 @@ export default {
     data() {
         return {
             videoSrc: null,
+            resTable: null
         }
     },
     methods: {
@@ -14,8 +15,18 @@ export default {
             this.$refs.VideoPlayer.src = `http://localhost:5000/videos/video/` + this.uid + '-' + res
             this.$refs.VideoPlayer.play()
             this.$refs.VideoPlayer.currentTime = currentTime
-        }
-    }
+        },
+        async fetchResTable() {
+            await fetch(`http://localhost:5000/videos/resoltuionTable/` + this.uid)
+            .then(res => res.json())
+            .then(data => this.resTable = data)
+            .catch(err => console.log(err))
+            console.log(this.resTable)
+        },
+    },
+    mounted() {
+      this.fetchResTable()
+    },
     }
 
 </script>

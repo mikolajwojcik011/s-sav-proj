@@ -1,17 +1,25 @@
 const express = require('express')
 const router = express.Router()
-const videos = require('../viedoList.js')
+const videos = require('../assets/viedoList')
 const fs = require('fs')
 
 // get list of videos
-router.get('/', (req,res)=>{
+router.get('/', (req,res) => {
     res.json(videos)
 })
 
+// get list of videos
+router.get('/resoltuionTable/:uid', (req,res) => { 
+    const resTable = require(`../assets/${req.params.uid}/${req.params.uid}.js`)
+    console.log(resTable)
+    res.json(resTable)
+})
+
 //streaming route
-router.get('/video/:uid', (req, res) => {
-    console.log(req.params.uid)
-    const videoPath = `assets/${req.params.uid}.mp4`;
+router.get('/video/:path', (req, res) => {
+    let resolution = req.params.path.slice(-3)
+    let uid = req.params.path.slice(0, -4)
+    const videoPath = `assets/${uid}/${resolution}.mp4`;
     const videoStat = fs.statSync(videoPath);
     const fileSize = videoStat.size;
     const videoRange = req.headers.range;
