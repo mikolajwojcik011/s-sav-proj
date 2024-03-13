@@ -74,13 +74,6 @@ export default {
         height: 720px;
     }
 
-    @media screen and (max-width: 1280px) {
-  video {
-    width: 100%; 
-    height: 100%; 
-  }
-}
-
     .container {
         display: flex;
         justify-content: center; 
@@ -96,5 +89,18 @@ export default {
         width: 1280px;
         align-items: center;
         gap: 0.4rem;
+    }
+    @media screen and (max-width: 1280px) {
+        video {
+            width: 100%; 
+            height: 100%; 
+        }
+    }
+
+    @media screen and (min-width: 1930px) {
+        video {
+            width: 1920px; 
+            height: 1080px; 
+        }
     }
 </style>

@@ -1,7 +1,9 @@
 <template>
     <div class="tile"> 
         <img :src=thumbnail alt="Thumbnail">
-        <h3 class="roboto-bold">{{ title }}</h3>
+        <div class="txt-align">
+            <h3 class="roboto-bold">{{ title }}</h3>
+        </div>
     </div>
 
 </template>
@@ -15,6 +17,10 @@
 </script>
 
 <style>
+    .txt-align {
+        padding-right: 1.8rem;
+        padding-left: 1rem;
+    }
   .tile {
         box-sizing: border-box;
         max-width: 344px;
@@ -25,15 +31,14 @@
         max-width: 344px;
         height: auto;
         display: block;
-        margin-bottom: 1rem;
-        border-radius: 1rem;
+        margin-bottom: 0.4rem;
+        border-radius: 0.4rem;
     }
 
     .tile h3 {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin: 0;
-        margin-left: 1rem;
-
+        color: black;
     }
     
     .roboto-bold {

@@ -29,16 +29,49 @@
 
 <template>
   <section class="wrapper">
-    <router-link v-for="{title, uid, thumbnail} in videoList" :to="/video/+ uid" :key="uid">
-      <Tile :title="title" :thumbnail="thumbnail"></Tile>
-    </router-link>
+    <section class="tile-container">
+      <router-link class="underline" v-for="{title, uid, thumbnail} in videoList" :to="/video/+ uid" :key="uid">
+        <Tile :title="title" :thumbnail="thumbnail"></Tile>
+      </router-link>
+    </section>
   </section>
 </template>
 
-<style scoped>
-  .wrapper {
+<style>
+  .wrapper{
+    justify-content: center;
+    display: flex;
+  }
+
+  .tile-container {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);  
+      grid-template-columns: repeat(4, 1fr);  
       padding: 1rem;  
     }
+
+    .underline {
+      text-decoration: none;
+    }
+
+  @media screen and (max-width: 1400px) {
+    .tile-container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 1050px) {
+    .tile-container{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .tile-container{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
 </style>
