@@ -8,10 +8,9 @@ router.get('/', (req,res) => {
     res.json(videos)
 })
 
-// get list of videos
+//get list of avilable resolutions
 router.get('/resoltuionTable/:uid', (req,res) => { 
     const resTable = require(`../assets/${req.params.uid}/${req.params.uid}.js`)
-    console.log(resTable)
     res.json(resTable)
 })
 
