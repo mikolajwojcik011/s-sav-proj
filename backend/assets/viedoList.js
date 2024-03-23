@@ -1,15 +1,15 @@
 const allVideos = [
     {
-        uid: "a6364ccb-b3bc-436e-bfca-70b2db455f0b",
-        thumbnail: 'https://i.postimg.cc/7YLYjRTP/a6364ccb-b3bc-436e-bfca-70b2db455f0b.jpg',
+        uid: "0cfc9558-39d2-4e9e-b9b6-b4e22ab6e23f",
+        thumbnail: 'https://i.postimg.cc/TY01CPtd/0cfc9558-39d2-4e9e-b9b6-b4e22ab6e23f.jpg',
         duration: '3 mins',
-        title: 'XDDDul', 
+        title: 'wiador z benzyną',
     },
     {
-        uid: "126a7d50-7c2d-45b6-ba9e-48f548156980",
-        thumbnail: 'https://i.postimg.cc/VLPPWCs9/126a7d50-7c2d-45b6-ba9e-48f548156980.jpg',
+        uid: "8c773c89-f2b8-47d7-9950-84a0f57b994d",
+        thumbnail: 'https://i.postimg.cc/d1LFJsFY/mqdefault.jpg',
         duration: '3 mins',
-        title: 'polowanienakibel fdgfdsfgsdfgsdfgdsgf',
+        title: 'Chwila Odetchnienia - Motywacja Treningowa',
     },
     {
         uid: "194dfde1-549a-47f3-961d-16a178d1b549",
@@ -46,6 +46,18 @@ const allVideos = [
         thumbnail: 'https://i.postimg.cc/05CFh4ZH/9f167a51-afc0-45d6-a663-e2d9da323ae1.jpg',
         duration: '3 mins',
         title: 'TFT mobile - Doo Doong Deung Jang! (rap coreano) | Teamfight Tactics',
+    },
+    {
+        uid: "a6364ccb-b3bc-436e-bfca-70b2db455f0b",
+        thumbnail: 'https://i.postimg.cc/7YLYjRTP/a6364ccb-b3bc-436e-bfca-70b2db455f0b.jpg',
+        duration: '3 mins',
+        title: 'XDDDul', 
+    },
+    {
+        uid: "126a7d50-7c2d-45b6-ba9e-48f548156980",
+        thumbnail: 'https://i.postimg.cc/VLPPWCs9/126a7d50-7c2d-45b6-ba9e-48f548156980.jpg',
+        duration: '3 mins',
+        title: 'polowanienakibel fdgfdsfgsdfgsdfgdsgf',
     },
     // {
     //     uid: "",

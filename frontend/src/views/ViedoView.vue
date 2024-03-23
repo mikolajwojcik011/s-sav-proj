@@ -44,7 +44,6 @@ export default {
       this.fetchResTable()
     },
     }
-
 </script>
 
 <template> 
