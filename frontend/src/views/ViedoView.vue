@@ -18,12 +18,12 @@ export default {
         changeResolution(res) {
             if(res == '1080') res = '180'
             let currentTime = this.$refs.VideoPlayer.currentTime
-            this.$refs.VideoPlayer.src = `http://26.172.244.223:8080/videos/video/` + this.uid + '-' + res
+            this.$refs.VideoPlayer.src = `http://localhost:5000/videos/video/` + this.uid + '-' + res
             this.$refs.VideoPlayer.play()
             this.$refs.VideoPlayer.currentTime = currentTime
         },
         async fetchResTable() {
-            await fetch(`http://26.172.244.223:8080/videos/resoltuionTable/` + this.uid)
+            await fetch(`http://localhost:5000/videos/resoltuionTable/` + this.uid)
             .then(res => res.json())
             .then(data => {
                 for(const [key, value] of Object.entries(data)){
@@ -49,7 +49,7 @@ export default {
 <template> 
     <section class="container">
         <video v-if="resTable.length != 0" ref="VideoPlayer" controls muted autoPlay crossOrigin="anonymous">
-            <source :src="`http://26.172.244.223:8080/videos/video/`+ this.uid + '-' + defaultRes" type="video/mp4">
+            <source :src="`http://localhost:5000/videos/video/`+ this.uid + '-' + defaultRes" type="video/mp4">
         </video>
     </section>
     <section class="container-res">

@@ -13,7 +13,7 @@
     },
     methods: {
       async fetchVideos() {
-        await fetch('http://26.172.244.223:8080/videos')
+        await fetch('http://localhost:5000/videos')
         .then(res => res.json())
         .then(data => this.videoList = data)
         .catch(err => console.log(err))
